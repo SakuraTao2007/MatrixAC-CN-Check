@@ -2,9 +2,8 @@
 
 如何使用？
 
-在config.yml中替换如下内容：
-
-cloud_config:
- enable: true
- links:
-   - 'https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@2.0.1/checks.yml'
+在config.yml中的
+cloud_config 里
+把 enable: fasle 改为 enable: true
+再把 links: ''里填入
+https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@2.0.1/checks.yml
