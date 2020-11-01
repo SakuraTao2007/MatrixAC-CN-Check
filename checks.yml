@@ -1,0 +1,675 @@
+#######################################################
+#     Matrix AntiCheat Check Setting - By Sakuratao   #
+#              Only use in MatrixAC 5.2.1             #
+#                                                     #
+#######################################################
+
+# 所有外挂检测项
+
+killaura:
+  # 是否启用？
+  enable: true
+  # 此为「Killaura」的检测模块调整(设置)
+  modules:
+    # Onehit 模块，包含许多子检测模块。如：onehit.13、onehit.11 等
+    onehit:
+      # 是否启用此模块(与 Onehit 的子模块)？
+      enable: true
+      # 触发时所增加的 vl 指数。
+      # 如：触发一次 Onehit 检测，如果「子模块不在 Config.yml 中自定义了 vl 值增加」，那么则增加 5vl 为每个「子模块」。 
+      vl_weight: 5
+      # 是否禁用「数据包顺序」检查？(包含一定的误报)。
+      disable_packet_order_check: false
+      # 是否禁用「刀刀命中」检查？(包含一定的误报)。
+      disable_dead_hit_check: true
+    # Autoclicker 模块，检测玩家的 CPS 与 连点器 行为。
+    # (此检测关联「Block」与「Scaffold」检测，关闭此项检测可能会导致「Block」与「Scaffold」检测)
+    autoclicker:
+      # 设置最大的 CPS 指数。
+      max_cps: 24
+      not_check_attacking_mobs: false
+      vl_weights:
+        cps: 9
+        delay: 4 
+        cps_long: 8
+        v19plus: 6
+    click:
+      enable: true
+      vl_weight: 28
+      sensitivity: 2
+    npc:
+      en1able: true
+      vl_weight: 7
+      async: true
+      real_entity_id: true
+      only_command_trigger: true
+      visible: true
+      force_random_name: false
+      check_ticks:
+        base: 100
+        attack_add: 20
+        hit_bot_add: 50
+      movement:
+        distance_base: 3.2
+        distance_random_size: 0.55
+        distance_attack_base: 3.4
+        move_up_after_attack: false
+    machine_learning:
+      enable: true
+      vl_weight: 12
+      disable_patterns: {}
+      collect_data_duration: 7000
+      availability_threshold:
+        hits: 3 
+        clicks: 30  
+        rotations: 90 
+    noswing:
+      enable: true
+      vl_weight: 4
+    critical:
+      enable: true
+      vl_weight: 8
+    snap:
+      enable: true
+      vl_weight: 7
+    clickaimbot:
+      enable: true
+      vl_weight: 9
+    aimassist:
+      enable: true
+      vl_weight: 15
+    aim:
+      enable: true
+      vl_weight: 13
+    direction:
+      enable: false # 不稳定
+      vl_weight: 3
+    smooth:
+      enable: true
+      vl_weight: 15
+    combine:
+      BLT_1:
+        time: 3500
+        condition:
+          - 'hb.reach'
+          - 'ka.one.11'
+        action: 35
+      BLT_2:
+        time: 5000
+        condition:
+          - 'hb.miss'
+          - 'hb.miss'
+          - 'ka.ff'
+        action: 20
+      BLT_3:
+        time: 4000
+        condition:
+          - 'ka.aim'
+          - 'ka.aim'
+          - 'hb.reach'
+        action: 30
+      move_1:
+        time: 8000
+        condition:
+            - 'move.xz'
+            - 'move.xz'
+            - 'move.xz'
+            - 'move.xz'
+            - 'move.xz'
+            - 'move.xz'
+            - 'move.xz'
+        action: 60
+      move_2:
+        time: 8000
+        condition:
+            - 'speed.noslow.tg2'
+            - 'speed.noslow.tg2'
+            - 'speed.noslow.tg2'
+            - 'speed.noslow.tg2'
+            - 'speed.noslow.tg2'
+        action: 60
+      move_3:
+        time: 8000
+        condition:
+            - 'speed.spin'
+            - 'speed.spin'
+            - 'speed.spin'
+            - 'speed.spin'
+        action: 60
+      move_4:
+        time: 8000
+        condition:
+            - 'speed.main'
+            - 'speed.main'
+            - 'speed.main'
+            - 'speed.main'
+            - 'speed.main'
+            - 'speed.main'
+            - 'speed.main'
+        action: 30
+      speed_check_test:
+        time: 8000
+        condition:
+           - 'speed.strafe'
+           - 'speed.strafe'
+        action: 120
+      inv.move:
+        time: 8000
+        condition:
+           - 'inv.move'
+           - 'inv.move'
+           - 'inv.move'
+        action: 120
+      block_1:
+      
+        time: 8000
+        condition:
+           - 'interact.reach'
+           - 'interact.reach'
+           - 'interact.reach'
+        action: 120
+      ka.smt:
+        time: 8000
+        condition:
+            - 'ka.smt'
+            - 'ka.smt'
+        action: 60
+      ka_aim_1:
+        time: 8000
+        condition:
+            - 'ka.aim'
+            - 'ka.aim'
+            - 'ka.aim'
+            - 'ka.aim'
+            - 'ka.aim'
+        action: 60
+      ka_aim_2:
+        time: 8000
+        condition:
+            - 'ka.ckm'
+            - 'ka.ckm'
+            - 'ka.ckm'
+        action: 60
+      ka_aim_3:
+        time: 8000
+        condition:
+            - 'ka.aim'
+            - 'ka.aim'
+            - 'ka.ckm'
+        action: 60
+      ka.ff_1:
+        time: 9000
+        condition:
+          - 'ka.ff'
+          - 'ka.ff'
+        action: 60
+      ka11_smt:
+        time: 5000
+        condition:
+          - 'ka.one.11'
+          - 'ka.one.11'
+          - 'ka.one.11'
+          - 'ka.one.11'
+          - 'ka.smt'
+          - 'ka.smt'
+        action: 120 
+      ka.one.4:
+        time: 50000
+        condition:
+            - 'ka.one.4'
+            - 'ka.one.4'
+            - 'ka.one.4'
+        action: 30
+      ka.one.3:
+        time: 50000
+        condition:
+            - 'ka.one.3'
+            - 'ka.one.3'
+            - 'ka.one.3'
+        action: 30
+      ka.one.10:
+        time: 50000
+        condition:
+            - 'ka.one.10'
+            - 'ka.one.10'
+            - 'ka.one.10'
+        action: 30
+      ka.clk:
+        time: 50000
+        condition:
+            - 'ka.clk'
+            - 'ka.clk'
+            - 'ka.clk'
+        action: 40
+      ac_check_1:
+        time: 50000
+        condition:
+            - 'ka.ac.delay'
+            - 'ka.ac.delay'
+            - 'ka.ac.delay'
+        action: 60
+      ANTIkb_1:
+        time: 50000
+        condition:
+            - 'vel.expect'
+            - 'vel.expect'
+            - 'vel.expect'
+        action: 60
+      ANTIkb_2:
+        time: 50000
+        condition:
+            - 'vel.vet'
+            - 'vel.vet'
+            - 'vel.vet'
+        action: 70
+      ANTIkb_3:
+        time: 50000
+        condition:
+            - 'vel.expect'
+            - 'vel.vet'
+            - 'vel.vet'
+        action: 120
+      ANTkb_4:
+        TIME: 5000
+        condition:
+            - 'vel.expect'
+            - 'vel.expect'
+        action: 25
+      critcal1_1:
+        time: 8000
+        condition:
+           - 'ka.critcal.hop'
+           - 'ka.critcal.hop'
+        action: 130
+      reach_reach_ka11_1:
+        time: 8000
+        condition:
+          - 'hb.reach'
+          - 'hb.reach'
+          - 'hb.reach'
+        action: 120
+      hitbox_hitbox_ka11_1:
+        time: 8000
+        condition:
+          - 'hb.mis'
+          - 'hb.mis'
+          - 'hb.mis'
+          - 'hb.mis'
+        action: 70
+      derp:
+        time: 8000
+        condition:
+           - 'derp'
+           - 'derp'
+        action: 120
+  commands:
+    100: 
+     - 'matrix npc %player% 900'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 疑似使用作弊，类型 &8» &7KillAura/Composite(综合检测 - 测试阶段) &8» &6[1/5] &6[VL: 100] '
+    200: 
+     - 'matrix npc %player% 900'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 疑似使用作弊，类型 &8» &7KillAura/Composite(综合检测 - 测试阶段) &8» &6[2/5] &6[VL: 200]  '
+    300: 
+     - 'matrix npc %player% 900'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 疑似使用作弊，类型 &8» &7KillAura/Composite(综合检测 - 测试阶段) &8» &c[3/5] &6[VL: 300] '
+    400: 
+     - 'matrix npc %player% 900'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 疑似使用作弊，类型 &8» &7KillAura/Composite(综合检测 - 测试阶段) &8» &c[4/5] &6[VL: 400]'
+    500: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 疑似使用作弊，类型 &8» &7KillAura/Composite(综合检测 - 测试阶段) &8» &c[5/5] &6[VL: 500] &c达到警戒线，踢出。'
+     - 'matrix delay 3 ban %player% 30d  GUARDER CHEAT DETECTION &b[GG-8244]'
+hitbox:
+  enable: true
+  max_reach: 3.12
+  trace_back_length: 7
+  max_ping: 250
+  cancel_way: silent
+  cancel_vl: 4
+  vl_weights:
+    miss_player_hitbox: 2
+    reach_target_standing: 12
+    reach_target_moving: 3
+    reach_simple: 4
+  dynamic_vl:
+    enable: true
+    expander: 10
+    min_vl: 3
+    max_vl: 15
+  commands:
+    8: 'matrix npc %player% 200'
+    15: 'matrix npc %player% 900'
+    38: 
+        - 'matrix npc %player% 900'
+        - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Reach/Hitbox &8» &a[1/5] &6[VL: 38]'
+    44: 
+        - 'matrix npc %player% 900'
+        - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Reach/Hitbox &8» &e[2/5] &6[VL: 44]'
+    58: 
+        - 'matrix npc %player% 900'
+        - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Reach/Hitbox &8» &c[3/5] &6[VL: 58]'
+    64: 
+        - 'matrix npc %player% 900'
+        - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Reach/Hitbox &8» &c[4/5] &6[VL: 64]'
+    70: 
+        - 'matrix delay 3 ban %player% 30d GUARDER CHEAT DETECTION &b[GD-8213]'
+        - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Reach/Hitbox &8» &c[5/5] &6[VL: 70]'
+speed:
+  enable: true
+  ignore_unloaded_chunks: true
+  tolerance: 0.01
+  skip_rate: 2
+  cancel_vl: 35
+  sprint_direction: true
+  strafe: true
+  fastclimb: true
+  check_noslow: true
+  commands:
+    150: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Speed &8» &a[1/4] &6[VL: 150]'
+     - 'coc %player% if -ping-<900&-ping->0&-tps->15.0 do matrix npc %player% 125'
+    200: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Speed &8» &6[2/4] &6[VL: 200]'
+     - 'coc %player% if -ping-<900&-ping->0&-tps->15.0 do matrix npc %player% 125'
+    350: 
+     - 'coc %player% if -ping-<900&-ping->0&-tps->15.0 do matrix npc %player% 125'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Speed &8» &c[3/4] &6[VL: 350]'
+    420: 
+     - 'matrix delay 3 ban %player% 30d  GUARDER CHEAT DETECTION &b[GM-8244]'
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7Speed &8» &4[4/4] &6[VL: 420] 达到警戒线，踢出。'
+fly:
+  enable: true
+  cancel_vl: 50
+  ability:
+    enable: true
+    vl_weight: 20
+  setback_to_void: true
+  nofall:
+    setback: true
+    damage: true
+  trident_boost_vl_weight: 20
+  setback: back
+  commands:
+    50: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Fly &8» &a[1/3] &6[VL: 50]'
+     - 'coc %player% if -ping-<900&-ping->0&-tps->15.0 do matrix npc %player% 125 '
+    100: 
+     - 'coc %player% if -ping-<900&-ping->0&-tps->15.0 do matrix npc %player% 125 '
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Fly &8» &c[2/3] &6[VL: 100]'
+    180: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Fly &8» &c[3/3] &6[VL: 180] 达到警戒线，踢出'
+     - 'matrix delay 2 kick %player% java.net.SocketException: Connection reset'
+
+badpackets:
+  enable: true
+  buffer_size: 20
+  freeze_time: 500
+  max_extra_packets: 17
+  vl_weights:
+    limit: 15
+    timer: 10
+  commands:
+    130: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7BadPackets &8» &a[1/3] &6[VL: 130]'
+    250: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7BadPackets &8» &c[2/3] &6[VL: 250]'
+    380: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7BadPackets &8» &4[3/3] &6[VL: 380] 达到警戒线，踢出'
+     - 'matrix delay 2 kick %player% java.lang.OutOfMemoryError: Java heap space'
+
+fastuse:
+  enable: true
+  cancel_vl: 2
+  vl_weight: 2
+  commands:
+    5: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7FastUse &8» &a[1/3] &6[VL: 5]'
+    
+    8:
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7FastUse &8» &e[2/3] &6[VL: 8]'
+    12: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7FastUse &8» &c[2/3] &6[VL: 12] 达到警戒线，踢出'
+     - 'matrix delay 3 kick %player% java.lang.OutOfMemoryError: Java heap space'
+
+fastbow:
+  enable: true
+  cancel_vl: 7
+  vl_weight: 1
+  commands:
+    5: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7FastBow &8» &a[1/2] &6[VL: 5]'
+    15: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7FastBow &8» &c[2/2] &6[VL: 15] 达到警戒线，踢出'
+     - 'matrix delay 3 kick %player% java.lang.OutOfMemoryError: Java heap space'
+## FastHeal
+# Check prevents player from regaining health too quickly.
+fastheal:
+  # Enable this check?
+  enable: true
+
+  # Violation Weight
+  vl_weight: 1
+
+  # Violation Thresholds
+  # number_of_violations: '<command>'
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7FastHeal &8» &a[1/2] &6[VL: 10]'
+    48: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7FastHeal &8» &c[2/2] &6[VL: 48] 达到警戒线，踢出'
+     - 'matrix delay 3 kick %player% java.lang.OutOfMemoryError: Java heap space'
+block:
+  enable: true
+  cancel_vl: 5
+  modules:
+    fastbreak:
+      enable: true
+      vl_weight: 4
+    fastplace:
+      enable: true
+      vl_weight: 1
+      max_place_per_second: 9
+    noswing:
+      enable: true
+      vl_weight: 1
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Block &8» &a[1/2] &6[VL: 10]'
+    32: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7Block &8» &c[2/2] &6[VL: 32] 达到警戒线，踢出'
+     - 'matrix delay 3 kick %player% java.net.ConnectException: Connection timed out: no further information:'
+
+scaffold:
+  enable: true
+  cancel_vl: 15
+  modules:
+    place:
+      enable: true
+      vl_weight: 7
+    delay:
+      enable: true
+      vl_weight: 5
+      cancel_place: true
+      min_delay: 6
+    right_cps:
+      enable: true
+      vl_weight: 5
+    tower:
+      enable: true
+      vl_weight: 2
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Scaffold &8» &2[1/3] &6[VL: 10]'
+    15: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Scaffold &8» &e[2/3] &6[VL: 15]'
+    24: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Scaffold &8» &4[3/3] &6[VL: 24]'
+     - 'matrix delay 3 ban %player% 30d  GUARDER CHEAT DETECTION &b[GD-8243]'
+
+jesus:
+  enable: true
+  cancel_vl: 15
+  ignore_swim_pose: true
+  commands:
+    20: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Jesus &8» &a[1/3] &6[VL: 20]'
+    120: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Jesus &8» &c[2/3] &6[VL: 120]'
+    164: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认为使用作弊，类型 &8» &7Jesus &8» &4[3/3] &6[VL: 164] 达到警戒线，踢出'
+     - 'matrix delay 3 ban %player% 30d  GUARDER CHEAT DETECTION &b[GD-8244]'
+inventory:
+  enable: true
+  cancel_vl: 10
+  chest_stealer: true
+  ignore_color: true
+  disable_invmove: false
+  auto_totem: true
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Inventory/ChestSteal &8» &a[1/2] &6[VL: 10]'
+    20: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 确认使用作弊，类型 &8» &7Inventory/ChestSteal &8» &c[2/2] &6[VL: 20] 达到警戒线，踢出'
+     - 'matrix delay 3 ban %player% 30d GUARDER CHEAT DETECTION &b[GD-8241]'
+
+velocity:
+  enable: true
+  wait_time: 20
+  ignore_lag: true
+  modules:
+    respond: 5
+    analyser: 5
+    vertical: 1
+  commands:
+    9: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Velocity &8» &a[1/3] &6[VL: 9]'
+    14: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Velocity &8» &c[2/3] &6[VL: 14]'
+    20: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Velocity &8» &4[3/3] &6[VL: 20] 达到警戒线，踢出'
+     - 'matrix delay 3 ban %player% 30d GUARDER CHEAT DETECTION &b[GD-8234]'
+chat:
+  enable: false
+
+  # Minimum amount of time between messages (Seconds)
+  min_time: 3
+
+  # Violations needed to cancel sent messages (-1 = never cancel)
+  cancel_vl: 3
+
+  # Violation Thresholds
+  # number_of_violations: '<command>'
+  commands:
+    4: 'matrix notify %player% is spamming the chat (ChatSpam)'
+    10: 'matrix kick %player% Stop spamming!'
+
+interact:
+  enable: true
+  modules:
+    break_block:
+      enable: true
+      vl_weight: 1
+    attack:
+      enable: true
+      vl_weight: 1
+    block_reach:
+      enable: true
+      vl_weight: 1
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Interact &8» &a[1/2] &6[VL: 10]'
+    15: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Interact &8» &C[2/2] &6[VL: 15] 达到警戒线，踢出 '
+     - 'matrix delay 3 %player% kick java.net.ConnectException: Connection timed out: no further information:'
+
+autofish:
+  enable: false # Unstable
+  cancel_vl: 5
+  commands:
+    6: 'matrix notify %player% is using auto fish (AutoFish)'
+    14: 'matrix kick %player% No Auto Fishing!'
+
+phase:
+  enable: true
+  freeze_time: 400
+  cancel_vl: 5
+  prevent_close_range_enderpearl: true
+  exclude_types: 
+    - "AIR"
+    - "anVIL"
+    - "CARPET"
+    - "CARROT"
+    - "CHEST"
+    - "CROPS"
+    - "ENDER_CHEST"
+    - "GRASS_PATH"
+    - "IRON_FENCE"
+    - "KELP_PLanT"
+    - "LanDER"
+    - "LAVA"
+    - "LILY_Pan"
+    - "PISTON_MOVING_PIECE"
+    - "POTATO"
+    - "SEAGRASS"
+    - "SOIL"
+    - "STATIONARY_LAVA"
+    - "STATIONARY_WATER"
+    - "TALL_SEAGRASS"
+    - "TRAPPED_CHEST"
+    - "VINE"
+    - "WATER"
+    - "WATER_LILY"
+    - "WHEAT"
+    - "ACACIA_STAIRS"
+    - "anDESITE_STAIRS"
+    - "BIRCH_STAIRS"
+    - "BRICK_STAIRS"
+    - "COBBLESTONE_STAIRS"
+    - "DARK_OAK_STAIRS"
+    - "DARK_PRISMARINE_STAIRS"
+    - "CACIA_SLAB"
+    - "anDESITE_SLAB"
+    - "BIRCH_SLAB"
+    - "BRICK_SLAB"
+    - "SLAB"
+    - "COBBLESTONE_SLAB"
+    - "CUT_SanDSTONE_SLAB"
+    - "CUT_RED_SanDSTONE_SLAB"
+    - "DARK_OAK_SLAB"
+    - "DARK_PRISMARINE_SLAB"
+    - "DIORITE_SLAB"
+    - "END_STONE_BRICK_SLAB"
+    - "GRanITE_SLAB"
+    - "JUNGLE_SLAB"
+    - "SMOOTH_STONE_SLAB"
+    - "STONE_SLAB"
+    - "STONE_STAIRS"
+  commands:
+    7: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Phase &8» &a[1/3] &6[VL: 7]'
+    13: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Phase &8» &c[2/3] [VL: 13]'
+    20: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Phase &8» &4[3/3] [VL: 20] 达到警戒线，踢出 '
+     - 'matrix delay 3 kick %player% Internal Server Error' 
+
+autobot:
+  enable: false
+  commands:
+    5: 'matrix notify %player% suspected use of automatic robots (AutoBot)'
+    10: 'matrix notify %player% suspected use of automatic robots (AutoBot) #2'
+    15: 'matrix delay 15 matrix kick %player% &cYou were kicked by this server%break%%break%&7Reason: &fCHEATING DETECTED (#17)%break%&7Kick Id: &fGD'
+
+elytra:
+  enable: true
+  force_setback: true
+  setback_vl: 5
+  unequip_vl: 20
+  commands:
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Elytra &8» &a[1/3] &6[VL: 10]'
+    20: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Elytra &8» &c[2/3] &6[VL: 20]'
+    48: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Elytra &8» &4[3/3] &6[VL: 48] 达到警戒线，踢出 '
+     - 'matrix delay 3 kick %player% Internal Server Error'
+
+vehicle:
+  enable: true
+  deny_entity_types_as_vehicle:
+    - 'LLAMA'
+  speed:
+    enable: true
+    setback_vl: 2
+  flight:
+    enable: true
+    setback_vl: 4
+    leave_vehicle: 10
+  commands:
+    5: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Vehicle &8» &a[1/3] &6[VL: 5]'
+    10: 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Vehicle &8» &c[2/3] &6[VL: 10]'
+    32: 
+     - 'matrix notify %player% &7[&bMatrix Module&7] 检测 疑似使用作弊，类型 &8» &7Vehicle &8» &4[3/3] &6[VL: 32] 达到警戒线，踢出 '
+     - 'matrix delay 3 kick %player% Internal Server Error'
