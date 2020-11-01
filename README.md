@@ -7,4 +7,4 @@
 cloud_config:
  enable: true
  links:
-   - 'https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@2.0/checks.yml'
+   - 'https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@2.0.1/checks.yml'
