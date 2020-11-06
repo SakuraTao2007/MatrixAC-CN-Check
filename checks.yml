@@ -1,9 +1,12 @@
 #######################################################
 #     Matrix AntiCheat Check Setting - By Sakuratao   #
-#              Only use in MatrixAC 5.2.1             #
+#          Only use in MatrixAC 5.3.0-5.3.1           #
 #######################################################
 
 # 「Matrix AntiCheat」的所有外挂检测项
+
+## Killaura(杀戮光环) 检测的所有模块。
+# 介绍：这个检测可以侦测到玩家的 Killaura(杀戮光环)、aim(自动瞄准)、ac(连点器) 等作弊行为。
 killaura:
   # 是否启用？
   enable: true
@@ -15,13 +18,13 @@ killaura:
     onehit:
       # 是否启用此模块(与 Onehit 的子模块)？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       # 如：触发一次 Onehit 检测，如果「子模块不在 Config.yml 中自定义了 vl 值增加」，那么则增加 5vl 为每个「子模块」。 
       vl_weight: 5
       # 是否禁用「数据包顺序」检查？(包含一定的误报)。
       disable_packet_order_check: false
-      # 是否禁用「刀刀命中」检查？(包含一定的误报)。
+      # 是否禁用「攻击 “死人” 」检查？(包含一定的误报)。
       disable_dead_hit_check: true
     # Autoclicker 模块，检测玩家的 CPS 与 连点器 行为。
     # (此检测关联「Block」与「Scaffold」检测，关闭此项检测可能会导致「Block」与「Scaffold」检测失效)
@@ -30,7 +33,7 @@ killaura:
       max_cps: 24
       # 是否启用对攻击「生物」时的检测？
       not_check_attacking_mobs: false
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weights:
         # 大于 max_cps 的设定值后增加的 vl。
@@ -46,7 +49,7 @@ killaura:
     click:
       # 是否启用此模块？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 28
       sensitivity: 2
@@ -92,7 +95,7 @@ killaura:
     machine_learning:
       # 是否启用「机器学习」检测？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 12
       # 选择需要关闭的学习项。
@@ -107,14 +110,14 @@ killaura:
     noswing:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 4
     # Critical 检测模块，检测玩家的 Killaura 行为。
     critical:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 8
     # snap 检测模块，检测玩家的 Killaura 行为。
@@ -122,7 +125,7 @@ killaura:
     snap:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 7
     # clickaimbot 检测模块，检测玩家的 Killaura 行为。
@@ -130,7 +133,7 @@ killaura:
     clickaimbot:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 9
     # aimassist 检测模块，检测玩家的 Killaura 与 自动瞄准 行为。
@@ -138,7 +141,7 @@ killaura:
     aimassist:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 15
     # aim 检测模块，检测玩家的 Killaura 与 自动瞄准 行为。
@@ -146,14 +149,14 @@ killaura:
     aim:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 13
     # direction 检测模块，检测玩家的 Killaura 与 移动 行为。
     direction:
       # 是否启用？(此项不稳定)
       enable: false
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 3
     # smooth 检测模块，检测玩家的 Killaura 与 自动瞄准 行为。
@@ -161,7 +164,7 @@ killaura:
     smooth:
       # 是否启用？
       enable: true
-      # 触发时所增加的 vl 指数。
+      # 触发该模块时所增加的 vl 指数。
       # 可在 config.yml 内设置「子模块」所增加的 vl。
       vl_weight: 15
     # 自定义检测项。
@@ -174,371 +177,476 @@ killaura:
           - 'ka.smt'
         action: 5 
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix npc %player% 100'
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
     45: 'matrix delay 12 matrix kick %player% KillAura'
 
-## HitBox
-# Description: This check prevents players from using HitBox, Angle, Reach hacks.
-# Note: This check is strict ONLY when you attack other PLAYERS, but it's very loose
-# when you attack non-player creatures. So, if you find that you can use HixBox
-# hack on non-player creatures, it's very normal, don't report it.
+## Hitbox(碰撞体积) 检测的所有模块。
+# 介绍: 这个检测可以侦测玩家的 HitBox(碰撞箱偏度), Angle(角度攻击), Reach(长臂猿) 的作弊行为。
+# 注意: 这个检测的检测最精准程度在玩家之间的攻击才生效，对生物的攻击精准程度不高。
+# 因此，当玩家攻击生物时，有可能 Hitbox 检测会被绕过。
+
 hitbox:
-  # Enable HitBox check?
+  # 是否启用？
   enable: true
 
-  # Maximum reach distance (default: 3.1)
+  # 设置最大的「攻击距离」。(默认为: 3.1 格方块)
   max_reach: 3.1
 
-  # How many moves should the Matrix trace back to the player? (default: 7)
-  # You can set this higher to reduce false positives, but this will weaken HitBox detection
-  # My suggestion is 3 to 10, please don't make it more than 10, because it is useless
+  # 此项默认即可。
+  # 您可以设置更高以降低误报，但会削弱 Hitbox 的检测能力，
+  # 因此，建议您设置在 3 ~ 10 的范围之内。
   trace_back_length: 7
 
-  # How much should Matrix ignore players with greater network latency?
-  # When the player's network latency is greater than this value, some
-  # HitBox checks will stop working to prevent false positives. You can
-  # set this value to -1 to disable this feature. (default: 250)
+  # 检测玩家的最大延迟。
+  # 为了降低误报，超过此项设置的最大延迟的玩家将不执行 Hitnbox 检测，
+  # 要注意的是，「Matrix AntiCheat」可以识别 pf(假延迟) 因此不用担心。
+  # 你可以设置为 -1 以关闭此项。(默认值： 250延迟)
   max_ping: 250
 
-  # Whether Matrix should cancel the player's attack after detecting the player's cheating?
-  # There are there choice:
-  #  1. none   -  do nothing
-  #  2. silent -  set damage to zero (Recommend)
-  #  3. cancel -  cancel the attack
+  # 当玩家触发到 cancel_vl 所设定
+  # 的 vl 值时执行的取消操作。
+  #
+  # 这些功能如下:
+  #  1. none   -  什么事情都不做；
+  #  2. silent -  将伤害设为零 (推荐)；
+  #  3. cancel -  取消攻击。
   cancel_way: silent
 
-  # Violations needed to cancel illegal hits
+  # 设置触发 cancel_way 的 vl 值。
   cancel_vl: 5
 
-  # Violation weights
+  # 触发该模块时所增加的 vl 指数。
+  # 可在 config.yml 内设置「子模块」所增加的 vl。
   vl_weights:
+    # 当玩家的碰撞箱出现异常时所增加的 vl 。
     miss_player_hitbox: 2
+    # 当玩家的攻击距离超过 max_reach 所增加的 vl 。 
     reach_target_standing: 10
+    # 当攻击者攻击其他玩家时，且正在移动并出现作弊现象所增加的 vl (默认即可，如误报严重适当改小)。
     reach_target_moving: 3
+    # 当玩家攻击非玩家生物时，出现作弊现象所增加的 vl (默认即可，如误报严重适当改小)。
     reach_simple: 3
 
-  # Should dynamic VL weight be enabled?
-  # If enabled, the VL weight will be calculated based on the player's reach
-  # For example, players get 1vl when using 3.2 reach, and 19vl when players use 5.0 reach
-  # If this function is enabled, then "reach_target_standing" and "reach_target_moving" will no longer take effect
-  # Note: dynamic VL = (current_reach - max_reach) * expander
+  # 是否启用「动态 VL 运算」？
+  # 如果启用，vl 值将根据玩家的攻击范围进行计算。
+  # 例如, 达到 3.2 攻击距离时给该玩家增加 1 vl，达到 5.0 攻击距离时给该玩家增加 19 vl，
+  # 如果启用此功能, 那么 "reach_target_standing" 与 "reach_target_moving" 子模块检测将不再「生效」，
+  # 注意: 「动态 VL 运算」值 = (current_reach[当前攻击距离] - max_reach[最大攻击距离]) * expander
   dynamic_vl:
+    # 是否启用？
     enable: true
+    # 设置扩大值。
     expander: 10
+    # 设置最小可增加 vl。
     min_vl: 3
+    # 设置最大可增加 vl。
     max_vl: 15
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox)'
     12: 'matrix npc %player% 120'
     15: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox) #2'
     24: 'matrix kick %player% Reach/HitBox Hacks'
 
-## Movement Speed Check
-# This checks how fast a player moves, and prevents the player from moving too fast.
+## Speed(移动速度) 检测的所有模块。
+# 介绍：这个检测可以侦测到玩家移动的速度，阻止玩家以不正常的移动速度行走。
 speed:
-  # Enable this check?
-  # Warning: Will also disable
-  # flight detection.
+  # 是否启用？
+  # 警告：关闭此检测会关乎到其他检测的运作！(例如 Fly[非法飞行] 检测)。
   enable: true
 
-  # Should Matrix ignore the unloaded chunks when checking? (default: true)
+  # 检测时，是否应忽略已卸载的区块？ (默认值: true[开启])
   ignore_unloaded_chunks: true
 
-  # Speed prediction tolerance
+  # 速度预测公差，不用设置太低与太高。
+  # 如果出现误报可适当放大。
   tolerance: 0.01
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行回弹操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 30
 
-  # Enable sprint direction check?
+  # 是否启用「Sprint」模块检测？
   sprint_direction: true
 
-  # Enable strafe check?
+  # 是否启用「Strafe」模块检测？
   strafe: true
 
-  # Enable FastClimb/FastLadder check?
+  # 是否启用「FastClimb/FastLadder」模块检测？
   fastclimb: true
 
-  # Should Matrix check NoSlowDown cheat?
+  # 是否启用「NoSlowDown」模块检测？
   check_noslow: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     55: 'matrix notify %player% tried to move faster than usual (Speed) #1'
     90: 'matrix notify %player% tried to move faster than usual (Speed) #2'
     220: 'matrix kick %player% Speed Hacks'
 
-## Fly
-# Prevents the player from using both vanilla and non-vanilla fly hacks.
+## Fly(非法飞行) 检测的所有模块。
+# 介绍：这个检测可以侦测玩家的 “非法” 飞行行为。
 fly:
-  # Enable this check?
-  # Warning: Speed check must also be enabled.
+  # 是否启用？
+  # 警告：必须启用 Speed(移动速度) 检测的主模块。
   enable: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行回弹操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 50
 
-  # Fly ability check
-  # It might be not compatible with some plugins, test it by yourself
+  # 飞行能力检测。
+  # 即判断您是否拥有飞行权限。
+  # 此项模块检测可能与您服务器上的某些插件「不兼容」，请自行测试。
   ability:
+    # 是否启用？
     enable: true
+    # 触发该模块时所增加的 vl 指数。
     vl_weight: 20
 
-  # If the player is very close to the void, should Matrix teleport
-  # it to the void after detecting that player is cheating? (default: true)
-  # If you disable this, it might cause some NoFall / BugUp bypass, but
-  # it's a nice option for skyblock server if you don't want your players
-  # get teleport into the void
+  # 如果该玩家处于虚空边缘，在检测到玩家作弊后，「Matrix AntiCheat」是否应该将该玩家传送至虚空？(默认值：true[启用])
+  # 如果禁用此模块检测，则可能会导致一些外挂的 NoFall 与 BugUp 绕过检测。
   setback_to_void: true
 
-  # NoFall check
+  # NoFall(掉落无伤害) 子模块检测
   nofall:
-    # Should Matrix setback the player who use NoFall?
+    # 「Matrix AntiCheat」是否应该对出现 Nofall 作弊的玩家执行回弹操作？
     setback: true
 
-    # Force deal damage after setback?
+    # 是否应在回弹后扣除掉落伤害？
     damage: true
 
-  # Trident Boost violation level weight
+  # Trident Boost 子模块检测的 VL 值设定。
   trident_boost_vl_weight: 20
 
-  # Setback method (back/ground)
-  # back: teleport the player to the last legit location
-  # ground: teleport the player to the ground under the player
+  # 设置回弹模式 (back/ground)
+  # back[回弹]: 把玩家传送回到其原本的位置。
+  # ground[地面传送]: 把玩家传送到一个方块上。
   setback: back
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     50: 'matrix notify %player% tried to fly (Fly) #1'
     100: 'matrix notify %player% tried to fly (Fly) #2'
     180: 'matrix kick %player% Fly Related Hacks'
 
 
-## BadPackets
-# Prevents player from sending too many movement packets or sending illegal packets
+## BadPackets(发包检测) 检测的所有模块。
+# 介绍：拦截玩家发送假的数据包，防止服务器宽带被堵塞与执行一些其他作弊检测。
 badpackets:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Buffer Size (ticks)
-  # The larger the value, the slower the detection, but the more stable
-  # Don't set it lower than 10
+  # 发包延迟设定 (ticks[时刻秒])
+  # 设定玩家发包的延迟，如果大于或小于此值太多，则执行 vl 增加。
   buffer_size: 20
 
-  # Freeze time (millisecond, 1second=1000 millisecond)
-  # The time to freeze player if they try to send too
-  # many moving packets at the same time
+  # 冻结时间 (millisecond[毫秒], 1秒=1000 millisecond[毫秒])，
+  # 如果该玩家尝试同时发送过多的 Move_Packet[移动数据包] ，则对他们进行冻结，
+  # (即让玩家看到的画面都是静止的，就像掉线了一样)，
+  # 
+  # 设置冻结玩家的时间。
   freeze_time: 500
 
-  # How many extra packets can the player send?
+  # 玩家可以发送多少个额外的数据包？
   max_extra_packets: 15
 
-  # Violation weight
+  # 触发该模块时所增加的 vl 指数。
+  # 可在 config.yml 内设置「子模块」所增加的 vl。
   vl_weights:
+    # 设置超过限定发送的数据包数量所增加的 VL 。
     limit: 10
+    # 设置对检测到作弊项 Timer 的 Vl 增加
     timer: 10
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     100: 'matrix notify %player% is sending unusual packets to server (BadPackets) #1'
     150: 'matrix notify %player% is sending unusual packets to server (BadPackets) #2'
     240: 'matrix kick %player% Sending Unusual Packets'
 
-## FastUse
-# Check prevents player from eating or using an item too quickly.
+## FastUse(快速吃东西) 检测的所有模块。
+# 介绍：此项检测可以侦测玩家吃东西或使用物品时速度，
+# 如果速度过快，则执行拦截
 fastuse:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violations needed to cancel illegal item use (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行撤销操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 1
 
-  # Violation weight
+  # 触发该模块时所增加的 vl 指数。
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     5: 'matrix notify %player% tried to use an item faster than usual (FastUse)'
     12: 'matrix kick %player% FastUse Hacks'
 
-## FastBow
-# Check prevents player from shooting a bow too quickly.
+## FastBow(快速拉弓) 检测的所有模块。
+# 介绍：此项检测可以检测玩家的拉弓速度，如果过快，则执行拦截。
 fastbow:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violations needed to cancel illegal bow use (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行撤销操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 7
 
-  # Violation Weight
+  # 触发该模块时所增加的 vl 指数。
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     5: 'matrix notify %player% is trying to shoot a bow too quickly (FastBow)'
     15: 'matrix kick %player% FastBow Hacks'
 
-## FastHeal
-# Check prevents player from regaining health too quickly.
+## FastHeal(快速回血) 检测的所有模块。
+# 介绍：此项检测可以检测玩家的回血速度，如果过快，则执行拦截。
 fastheal:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violation Weight
+  # 触发该模块时所增加的 vl 指数。
   vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% tried to regain health too quickly (FastHeal)'
     20: 'matrix kick %player% FastHeal Hacks'
 
-## Block
-# Check prevents the player from breaking, placing block quickly
+## Block(放/破坏 方块速度) 检测的所有模块。
+# 介绍：检测玩家的 放/破坏 方块的速度，如果出现异常，则执行拦截。
 block:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行撤销操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 5
 
-  # Modules List
-  # You can turn off some modules here
+  # 子模块列表。
+  # 你可以设置一些模块的「开/关」与 VL 在此。
   modules:
-    # It can detect player breaking block faster
+    # 检测玩家的破坏方块速度是否过快。
     fastbreak:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 4
-    # It can detect player placing block faster
+    # 检测玩家的放置方块速度是否过快。
     fastplace:
+    # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 1
+      # 设置每秒可放置的最大方块数。
       max_place_per_second: 9
-    # It can detect player placing block without swing hand
+    # 检测玩家搭方块时不摇晃手臂。
     noswing:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 1
-    # detect player not send abort breaking packet
+    # 检测玩家是否挖方块挖了一半就停止挖掘且不返回取消挖掘数据包。
     abort:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 0
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% tried to place/break a block too quickly (FastPlace/FastBreak)'
     20: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
-## Scaffold check
-# Check prevents player bridging blocks or towering up faster than normal speed
+## Scaffold(自动搭路) 检测的所有模块。
+# 介绍：检测玩家用方块搭路时所出现的速度与角度不正常。
 scaffold:
-  # Enable this check
+  # 是否启用？
   enable: true
 
-  # Cancel VL
+  # 取消方块放置的 VL。(即 吞方块)。
   cancel_vl: 15
 
-  # Modules
+  # 子模块列表。
+  # 你可以设置一些模块的「开/关」与 VL 在此。
   modules:
-    # It can detect player bridging faster
+    # 检测玩家的放置方块速度是否过快。
     place:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 7
 
-    # Preventing player bridge too fast
+    # 检测玩家放置方块的延迟。
     delay:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 5
+      # 是否开启「方块取消 [吞方块]」。
       cancel_place: true
+      # 设置最小点击延迟。
       min_delay: 6
 
-    # Preventing player right clicker fast
+    # 检测玩家右击的 CPS 是否过大。
     right_cps:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 5
 
-    # It can detect player towering up faster
+    # 检测玩家向上搭路时的角度与速度。
     tower:
+      # 是否启用？
       enable: true
+      # 触发该模块时所增加的 vl 指数。
       vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% tried to bridge blocks quickly (Scaffold)'
     15: 'matrix notify %player% tried to bridge blocks quickly (Scaffold) #2'
     24: 'matrix kick %player% Scaffold/Tower'
 
-## Jesus
-# Check prevents the player from moving too too quickly in liquids, or walking on liquid.
+## Jesus(水上行走) 检测的所有模块。
+# 介绍：检测玩家在水中的移动速度与是否在水面上行走。
 jesus:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行撤销操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 15
 
-  # Should Matrix ignore whether player is in swimming?
-  # This feature can prevent swimming status desync
-  ignore_swim_pose: true
+  # 「Matrix AntiCheat」是否忽略判断玩家是否正在游泳？
+  # 此功能可以防止游泳状态不同步。
+  ignore_swim_pose: false
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     20: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
     40: 'matrix notify %player% tried to move illegally in liquid (Jesus) #2'
     50: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
 
-## Inventory
-# Check prevents the player from using illegal inventory modifications such as Steal.
-# Also prevents quick inventory movement hacks.
+## Inventory(背包检测) 检测的所有模块
+# 介绍：可以检测玩家是否使用自动开箱、自动取箱子内物品、打开背包后移动等。
 inventory:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
-  # Violations needed to cancel illegal movements of items (-1 = never cancel)
+  # 设置到达一定 vl 值时对玩家执行撤销操作。(设置为 -1 = 永远关闭)。
   cancel_vl: 10
 
-  # Enable ChestStealer check?
-  # It can detect player taking items out of chest faster
+  # 是否启用 ChestStealer[自动取箱子物品] 作弊检测？
+  # 此项检测可以曾策玩家是否快速从箱子中取出物品。
   chest_stealer: true
 
-  # Ignore items/inventory which has colorful name
-  # This feature can prevent false positive when you
-  # click some GUI such as the Bedwars Shop
+  # 此功能可以防止您单击某些GUI (例如：Bedwars Shop) 时误报作弊。
   ignore_color: false
 
-  # Disable InventoryMove check
-  # If you don't need InventoryMove check, you can set this to 'true' to disable it
-  # This option ONLY works for 1.12/1.13/+ server
+  # 是否关闭 InventoryMove 作弊检测？
+  # 如果不需要 InventoryMove 检查，可以将其设置为「true」以将其禁用。
+  # 此选项仅适用于 1.12/1.13/+(更高版本) 的服务器。
   disable_invmove: false
 
-  # Check AutoTotem cheat?
+  # 是否启用 AutoTotem 作弊检测？
   auto_totem: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% moved items in inventory too quickly (ChestSteal)'
     20: 'matrix kick %player% ChestSteal/Inventory Hacks'
 
-## Velocity
-# Check prevents the player from using any type of anti-knockback hacks.
+## Velocity(防击退) 检测的所有模块
+# 检测玩家是否使用了 anti-knockback(无击退) 作弊。
 velocity:
-  # Enable this check?
+  # 是否启用？
   enable: true
 
   # The time to wait for players to respond to velocity (ticks)
@@ -556,8 +664,14 @@ velocity:
     analyser: 3
     vertical: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # VL 值达到指定时所执行的命令
+  # 例如这样：
+  #
+  # commands:
+  #   10: 'ban %player% 7d You are a Hacker!'
+  #
+  # 其中，「10」就是指定的 vl 值，「ban %player% 7d You are a Hacker!」就是命令内容。
+  # 注意！命令不需要加 /(斜杠) ！
   commands:
     10: 'matrix notify %player% tried to ignore server velocity (Velocity)'
     15: 'matrix notify %player% tried to ignore server velocity (Velocity) #2'
