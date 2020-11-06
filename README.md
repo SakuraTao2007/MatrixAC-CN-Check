@@ -10,4 +10,4 @@ cloud_config 里
 
 再把 links: ''里填入
 
-https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@2.0.1/checks.yml
+https://cdn.jsdelivr.net/gh/SakuraTao2007/MatrixAC-CN-Check@3.0.0/checks.yml
